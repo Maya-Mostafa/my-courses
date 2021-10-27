@@ -1,74 +1,101 @@
 @import '~office-ui-fabric-react/dist/sass/References.scss';
 
 .myCourses {
-  .container {
-    max-width: 700px;
-    margin: 0px auto;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  h2{
+    font-weight: 600;
+    margin-bottom: -15px;
+    padding-top: 15px;
+    margin-top: 0;
   }
-
-  .row {
-    @include ms-Grid-row;
-    @include ms-fontColor-white;
-    background-color: $ms-color-themeDark;
-    padding: 20px;
-  }
-
-  .column {
-    @include ms-Grid-col;
-    @include ms-lg10;
-    @include ms-xl8;
-    @include ms-xlPush2;
-    @include ms-lgPush1;
-  }
-
-  .title {
-    @include ms-font-xl;
-    @include ms-fontColor-white;
-  }
-
-  .subTitle {
-    @include ms-font-l;
-    @include ms-fontColor-white;
-  }
-
-  .description {
-    @include ms-font-l;
-    @include ms-fontColor-white;
-  }
-
-  .button {
-    // Our button
-    text-decoration: none;
-    height: 32px;
-
-    // Primary Button
-    min-width: 80px;
-    background-color: $ms-color-themePrimary;
-    border-color: $ms-color-themePrimary;
-    color: $ms-color-white;
-
-    // Basic Button
-    outline: transparent;
-    position: relative;
-    font-family: "Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
-    -webkit-font-smoothing: antialiased;
-    font-size: $ms-font-size-m;
-    font-weight: $ms-font-weight-regular;
-    border-width: 0;
-    text-align: center;
-    cursor: pointer;
-    display: inline-block;
-    padding: 0 16px;
-
-    .label {
-      font-weight: $ms-font-weight-semibold;
-      font-size: $ms-font-size-m;
-      height: 32px;
-      line-height: 32px;
-      margin: 0 4px;
-      vertical-align: top;
-      display: inline-block;
+  .filterForm{
+    margin-bottom: 40px;
+    width: 98%;
+    input{
+      border: none;
+      font-weight: 600;
+      font-size: 14px;
+      &::placeholder{
+        font-weight: normal;
+        font-size: 14px;
+      }
     }
+    .resetSrchBtn{
+      float: right;
+      &::after{
+        content: " ";
+        clear: both;
+      }
+    }
+  }
+  .pagingBtns{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    button{
+      margin-left: 10px;
+      min-width: 10px;
+      padding: 0 5px;
+    }
+  }
+  .defautlLink{
+    color: #0173c6;
+    font-size: 14px;
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  div[id^=GroupedListSection] div[class^=ms-GroupHeader] {
+    margin-left: 35px;
+  }
+  div[id^=GroupedListSection] div[class^=ms-GroupHeader-title] {
+    margin-left: 0;
+  }
+
+  .formStatusCol{
+    display: flex;
+    align-content: stretch;
+    align-items: center;
+    span{
+      margin-left: 5px;
+    }
+  }
+
+  .srchBox{
+    i{
+      color: #323130;
+    }
+  }
+  .comboCntnr{
+    display: flex!important;
+    flex-direction: row;
+    align-items: baseline;
+    .comboIcon{
+      border-bottom: 1px solid #605e5c;
+      height: 23px;
+      border-radius: 0;
+      padding-left: 17px;
+    }
+    .comboStyle{
+      width: 100%;
+      div{
+        &::after{
+          border: none;
+          border-bottom: 1px solid #605e5c;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}
+
+.formStatusCol{
+  display: flex;
+  align-content: stretch;
+  align-items: center;
+  span{
+    margin-left: 10px;
   }
 }

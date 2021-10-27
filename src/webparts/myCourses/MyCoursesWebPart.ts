@@ -12,7 +12,10 @@ import MyCourses from './components/MyCourses';
 import { IMyCoursesProps } from './components/IMyCoursesProps';
 
 export interface IMyCoursesWebPartProps {
-  description: string;
+  wpTitle: string;
+  listUrl: string;
+  listName: string;
+  pageSize: number;
 }
 
 export default class MyCoursesWebPart extends BaseClientSideWebPart<IMyCoursesWebPartProps> {
@@ -21,7 +24,11 @@ export default class MyCoursesWebPart extends BaseClientSideWebPart<IMyCoursesWe
     const element: React.ReactElement<IMyCoursesProps> = React.createElement(
       MyCourses,
       {
-        description: this.properties.description
+        context: this.context,
+        wpTitle: this.properties.wpTitle,
+        listUrl: this.properties.listUrl,
+        listName: this.properties.listName,
+        pageSize: this.properties.pageSize
       }
     );
 
@@ -47,8 +54,21 @@ export default class MyCoursesWebPart extends BaseClientSideWebPart<IMyCoursesWe
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel
+                PropertyPaneTextField('wpTitle', {
+                  label: 'Webpart Title',
+                  value: this.properties.wpTitle
+                }),
+                PropertyPaneTextField('listUrl', {
+                  label: 'List URL',
+                  value: this.properties.listUrl
+                }),
+                PropertyPaneTextField('listName', {
+                  label: 'List Name',
+                  value: this.properties.listName
+                }),
+                PropertyPaneTextField('pageSize', {
+                  label: 'Number of Items',
+                  value: this.properties.pageSize.toString()
                 })
               ]
             }

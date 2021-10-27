@@ -21,7 +21,10 @@
     "description": { "default": "MyCourses description" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "MyCourses"
+      "wpTitle" : "My Courses",
+      "listUrl" : "https://pdsb1.sharepoint.com/Forms/Mylocation",
+      "listName" : "Links",
+      "pageSize" : 200
     }
   }]
 }

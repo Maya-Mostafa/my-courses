@@ -1,3 +1,9 @@
+import { WebPartContext } from "@microsoft/sp-webpart-base";
+
 export interface IMyCoursesProps {
-  description: string;
+  wpTitle: string;
+  context: WebPartContext;
+  listUrl: string;
+  listName: string;
+  pageSize: number;
 }
