@@ -1,13 +1,11 @@
 export interface IFilterFieldsProps{
     onChangeFilterField: any;
     filterField: {
-        title: {key: string, text: string},
-        formStatus: {key: string, text: string},
-        formDetails: string,
-        fullName: string,
-        locationNo: {key: string, text: string};
+        firstName: string,
+        lastName: string,
+        jobTitle: string;
+        location: any;
+        pNumber: any;
     };
-    resetSrch: any;    
-    formTitlesOptions: any;
-    formLocationNosOptions: any;
+    resetSrch: any;
 }
