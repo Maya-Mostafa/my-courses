@@ -22,8 +22,8 @@
     "officeFabricIconFontName": "Page",
     "properties": {
       "wpTitle" : "My Courses",
-      "listUrl" : "https://pdsb1.sharepoint.com/Forms/Mylocation",
-      "listName" : "Links",
+      "listUrl" : "https://pdsb1.sharepoint.com/MLP",
+      "listName" : "Completed Courses",
       "pageSize" : 200
     }
   }]
