@@ -22,6 +22,7 @@
     "officeFabricIconFontName": "Page",
     "properties": {
       "wpTitle" : "My Courses",
+      "siteCollection" : "https://pdsb1.sharepoint.com/MLP",
       "listUrl" : "https://pdsb1.sharepoint.com/MLP",
       "listName" : "Completed Courses",
       "pageSize" : 100

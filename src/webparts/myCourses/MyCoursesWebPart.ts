@@ -16,6 +16,7 @@ export interface IMyCoursesWebPartProps {
   listUrl: string;
   listName: string;
   pageSize: number;
+  siteCollection: string;
 }
 
 export default class MyCoursesWebPart extends BaseClientSideWebPart<IMyCoursesWebPartProps> {
@@ -28,7 +29,8 @@ export default class MyCoursesWebPart extends BaseClientSideWebPart<IMyCoursesWe
         wpTitle: this.properties.wpTitle,
         listUrl: this.properties.listUrl,
         listName: this.properties.listName,
-        pageSize: this.properties.pageSize
+        pageSize: this.properties.pageSize,
+        siteCollection: this.properties.siteCollection
       }
     );
 
@@ -57,6 +59,10 @@ export default class MyCoursesWebPart extends BaseClientSideWebPart<IMyCoursesWe
                 PropertyPaneTextField('wpTitle', {
                   label: 'Webpart Title',
                   value: this.properties.wpTitle
+                }),
+                PropertyPaneTextField('siteCollection', {
+                  label: 'Site Collection',
+                  value: this.properties.siteCollection
                 }),
                 PropertyPaneTextField('listUrl', {
                   label: 'List URL',

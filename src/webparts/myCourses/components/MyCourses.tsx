@@ -9,16 +9,17 @@ export default function MyCourses (props: IMyCoursesProps){
   const [preloaderVisible, setPreloaderVisible] = React.useState(false);
 
   React.useEffect(() => {
-    setPreloaderVisible(true);
+		setPreloaderVisible(true);
 		getLargeListItems(
 			props.context,
+			props.siteCollection,
 			props.listUrl,
 			props.listName,
 			props.pageSize
 		).then((r) => {
 			const formattedItems = r.filter((i) => i !== undefined);
 			setCurrListItems(formattedItems);
-      setPreloaderVisible(false);
+			setPreloaderVisible(false);
 		});
   }, []);
     

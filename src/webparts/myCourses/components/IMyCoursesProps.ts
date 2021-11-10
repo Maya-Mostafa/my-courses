@@ -6,4 +6,5 @@ export interface IMyCoursesProps {
   listUrl: string;
   listName: string;
   pageSize: number;
+  siteCollection: string;
 }
