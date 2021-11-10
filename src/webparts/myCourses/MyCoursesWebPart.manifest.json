@@ -17,14 +17,14 @@
   "preconfiguredEntries": [{
     "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Other
     "group": { "default": "Other" },
-    "title": { "default": "MyCourses" },
+    "title": { "default": "My Courses" },
     "description": { "default": "MyCourses description" },
     "officeFabricIconFontName": "Page",
     "properties": {
       "wpTitle" : "My Courses",
       "listUrl" : "https://pdsb1.sharepoint.com/MLP",
       "listName" : "Completed Courses",
-      "pageSize" : 200
+      "pageSize" : 100
     }
   }]
 }

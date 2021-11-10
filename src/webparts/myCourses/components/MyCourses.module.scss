@@ -4,7 +4,7 @@
   background-color: #fff;
   h2{
     font-weight: 600;
-    margin-bottom: -15px;
+    // margin-bottom: -15px;
     padding-top: 15px;
     margin-top: 0;
   }
@@ -87,6 +87,17 @@
           border-radius: 0;
         }
       }
+    }
+  }
+
+  .preloader{
+    .preloaderTxt{
+      position: relative;
+      z-index: 9999;
+    }
+    .preloaderOverlay{
+      background: rgba(255, 255, 255, 0.8);
+      z-index: 99;
     }
   }
 }
