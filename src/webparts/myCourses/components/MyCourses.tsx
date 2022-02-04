@@ -18,7 +18,12 @@ export default function MyCourses (props: IMyCoursesProps){
 			props.pageSize
 		).then((r) => {
 			const formattedItems = r.filter((i) => i !== undefined);
-			setCurrListItems(formattedItems);
+			const sortedByDate = formattedItems.sort((a:any,b:any) => {
+				const aDate:any = new Date(a.dateCompleted);
+				const bDate:any = new Date(b.dateCompleted);
+				return bDate - aDate;
+			});
+			setCurrListItems(sortedByDate);
 			setPreloaderVisible(false);
 		});
   }, []);

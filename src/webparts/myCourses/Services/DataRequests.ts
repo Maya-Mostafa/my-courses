@@ -19,10 +19,13 @@ const getCurrentUserId = async (context: WebPartContext, siteCollection: string)
   return response.Id;
 };
 
-const isCourseCompleted = async (context: WebPartContext, list : {url: string, name: string, title: string}, currUserId: string) => {
+const isCourseCompleted = async (context: WebPartContext, list : {url: string, name: string, title: string}, currUserId: string, filterField: string) => {
   let completedCourse = null;
-    
-  const responseUrl = `${list.url}/_api/web/Lists/GetByTitle('${list.name}')/items?$filter=AuthorId eq '${currUserId}'`;
+  const currentUserEmail = context.pageContext.user.email;
+  
+  let responseUrl = `${list.url}/_api/web/Lists/GetByTitle('${list.name}')/items?$filter=AuthorId eq '${currUserId}'`;
+  if (filterField === 'BoardEmail')
+    responseUrl = `${list.url}/_api/web/Lists/GetByTitle('${list.name}')/items?$filter=BoardEmail eq '${currentUserEmail}'`;    
 
   try{
     const response = await context.spHttpClient.get(responseUrl, SPHttpClient.configurations.v1).then(r => r.json());
@@ -49,7 +52,7 @@ export const getLargeListItems = async (context: WebPartContext, siteCollection:
 
   let completedCourses: any = [];
   allListsResults.map((listResult: any)=>{
-      completedCourses = completedCourses.concat(isCourseCompleted(context, {url: listUrl, name: listResult.ListName, title: listResult.Title}, currUserId));
+      completedCourses = completedCourses.concat(isCourseCompleted(context, {url: listUrl, name: listResult.ListName, title: listResult.Title}, currUserId, listResult.UserFilterBy));
       // completedCourses = completedCourses.concat(isCourseCompleted(context, {url: parseListUrl(listResult.URL.Url), name: listResult.ListName, title: listResult.Title}, currUserId));
   });
   return Promise.all(completedCourses);
